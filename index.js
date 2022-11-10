@@ -60,7 +60,7 @@ async function writeDataPoint(socket) {
     currentTime = time;
     time = time.slice(11);
 
-    power = (power + parseInt(socket[3])) / 2;
+    power = (power + parseInt(socket[3]) * 3 ) / 4;
     socket[3] = String(power);
     
     fs.appendFileSync(socket[2], time + ',' + String(power) + '\n');
