@@ -7,7 +7,7 @@ var socket2 = ['t2-kitchen', 'http://192.168.0.102/cm?cmnd=status%208', './data/
 var socket3 = ['t3-room   ', 'http://192.168.0.86/cm?cmnd=status%208', './data/t3-room.csv', '0'];
 var socket4 = ['t4-attic  ', 'http://192.168.0.207/cm?cmnd=status%208', './data/t4-attic.csv', '0'];
 
-setInterval(main, 10000);
+setInterval(main, 20000);
 
 /**
  * Calls the writeDataPoint() function for each socket.
@@ -33,6 +33,7 @@ async function main() {
     } catch (error) {
         console.log('Error when chekcing Socket 4 :: ' + currentTime);
     }
+    console.log('----------------');
 }
 
 /**
