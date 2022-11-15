@@ -2,10 +2,10 @@ const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fet
 const fs = require('fs');
 
 var currentTime = '';
-var socket1 = ['t1-desk   ', 'http://192.168.0.202/cm?cmnd=status%208', './data/t1-desk.csv', '0'];
-var socket2 = ['t2-kitchen', 'http://192.168.0.102/cm?cmnd=status%208', './data/t2-kitchen.csv', '0'];
-var socket3 = ['t3-room   ', 'http://192.168.0.86/cm?cmnd=status%208', './data/t3-room.csv', '0'];
-var socket4 = ['t4-attic  ', 'http://192.168.0.207/cm?cmnd=status%208', './data/t4-attic.csv', '0'];
+var socket1 = ['t1-desk   ', 'http://192.168.178.101/cm?cmnd=status%208', './data/t1-desk.csv', '0'];
+var socket2 = ['t2-kitchen', 'http://192.168.178.102/cm?cmnd=status%208', './data/t2-kitchen.csv', '0'];
+var socket3 = ['t3-room   ', 'http://192.168.178.103/cm?cmnd=status%208', './data/t3-room.csv', '0'];
+var socket4 = ['t4-attic  ', 'http://192.168.178.104/cm?cmnd=status%208', './data/t4-attic.csv', '0'];
 
 setInterval(main, 20000);
 
