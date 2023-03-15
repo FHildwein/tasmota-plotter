@@ -1,5 +1,8 @@
 const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
 const fs = require('fs');
+const http = require('http');
+
+const PORT = 3000;
 
 var currentTime = '';
 var socket1 = ['t1-desk   ', 'http://192.168.178.101/cm?cmnd=status%208', './data/t1-desk.csv', '0'];
@@ -59,7 +62,8 @@ async function writeDataPoint(socket) {
     var time = data.StatusSNS.Time;
 
     currentTime = time;
-    time = time.slice(11);
+    time = time.slice(5);
+    time = time.replace('T', '-')
 
     power = (power + parseInt(socket[3]) * 3 ) / 4;
     socket[3] = String(power);
@@ -68,5 +72,3 @@ async function writeDataPoint(socket) {
     console.log(socket[0] + ' : ' + power);
     return;
 }
-
-//await new Promise(resolve => setTimeout(resolve, 5000));
